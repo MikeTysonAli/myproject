@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Frontend and Backend Example</title>
+    
+    <!-- Add some styles for a peaceful beach island vibe -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://www.example.com/palm-beach.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            padding: 20px;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .question {
+            color: #FFD700;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 2px solid #FFD700;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            resize: vertical;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #FF6347;
+        }
+
+        button {
+            background-color: #FF6347;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Welcome to Paradise</h1>
+
+            <!-- Form to submit answers -->
+            <form action="/submit" method="POST">
+                <div class="stress-section">
+                    <h2>Island Life Stress & Tensions</h2>
+                    <p class="question">1. Are there challenges people face even in paradise?</p>
+                    <textarea name="answer1" class="answer-input" rows="3" placeholder="Write your thoughts here..."></textarea>
+                    
+                    <p class="question">2. Do people feel disconnected despite being surrounded by beauty?</p>
+                    <textarea name="answer2" class="answer-input" rows="3" placeholder="Write your thoughts here..."></textarea>
+
+                    <p class="question">3. How do tropical storms affect people's mental well-being?</p>
+                    <textarea name="answer3" class="answer-input" rows="3" placeholder="Write your thoughts here..."></textarea>
+
+                    <p class="question">4. Can the idea of 'island time' create a sense of urgency for some?</p>
+                    <textarea name="answer4" class="answer-input" rows="3" placeholder="Write your thoughts here..."></textarea>
+                </div>
+
+                <button type="submit">Submit Answers</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

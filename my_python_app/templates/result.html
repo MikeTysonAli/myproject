@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Results</title>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://www.example.com/palm-beach.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            padding: 20px;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .mood-result {
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+
+        .feedback-form {
+            margin-top: 20px;
+        }
+
+        .feedback-form input {
+            padding: 5px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 2px solid #FFD700;
+            margin: 5px;
+        }
+
+        .feedback-form button {
+            background-color: #FF6347;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .feedback-form button:hover {
+            background-color: #FF4500;
+        }
+
+        button {
+            background-color: #FF6347;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Your Sentiment Analysis Results</h1>
+
+            <div class="mood-result">
+                <p><strong>Answer 1 Mood:</strong> {{ mood_summary["Answer 1"] }}</p>
+                <p><strong>Answer 2 Mood:</strong> {{ mood_summary["Answer 2"] }}</p>
+                <p><strong>Answer 3 Mood:</strong> {{ mood_summary["Answer 3"] }}</p>
+                <p><strong>Answer 4 Mood:</strong> {{ mood_summary["Answer 4"] }}</p>
+                <p><strong>Overall Mood Score:</strong> {{ mood_summary["Overall Mood Score"] }}</p>
+            </div>
+
+            <div class="feedback-form">
+                <h2>Rate the Feedback Accuracy</h2>
+                <form action="/submit_feedback" method="POST">
+                    <label for="feedback_rating">How accurate was the sentiment analysis?</label>
+                    <input type="number" id="feedback_rating" name="feedback_rating" min="1" max="5" placeholder="1 (Very Poor) to 5 (Excellent)" required>
+                    <button type="submit">Submit Feedback</button>
+                </form>
+            </div>
+
+            <button onclick="window.history.back()">Go Back</button>
+        </div>
+    </div>
+</body>
+</html>
